@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>倒计时</title>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs/dayjs.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <span>当前时间:</span>
+      <span id="timercontainer"></span>
+    </div>
+    <div>
+      <span>截止时间:</span>
+      <span>2025-05-31</span>
+    </div>
+    <div>
+      <span>剩余时间:</span>
+      <span id="remaincontainer"></span>
+    </div>
+    <script>
+      document.getElementById("timercontainer").textContent =
+        dayjs().format("YYYY-MM-DD");
+      document.getElementById("remaincontainer").textContent =
+        Math.abs(dayjs().diff("2025-05-31", "d")) + "天";
+    </script>
+  </body>
+</html>
